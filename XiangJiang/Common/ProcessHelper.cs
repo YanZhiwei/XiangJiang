@@ -89,5 +89,15 @@ namespace XiangJiang.Common
             succeedLog = succeedOutput.ToString();
             failedLog = failedOutput.ToString();
         }
+
+        /// <summary>
+        /// 获取当前进程版本信息
+        /// </summary>
+        /// <returns>FileVersionInfo</returns>
+        public static FileVersionInfo GetCurrentVersion()
+        {
+            var fileName = Process.GetCurrentProcess().MainModule?.FileName ?? string.Empty;
+            return string.IsNullOrEmpty(fileName) ? null : FileVersionInfo.GetVersionInfo(fileName);
+        }
     }
 }
