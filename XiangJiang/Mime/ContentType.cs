@@ -1,6 +1,6 @@
-﻿namespace XiangJiang.Model
+﻿namespace XiangJiang.Mime
 {
-    public class MimeTypes
+    public class ContentType
     {
         #region application/*
 
