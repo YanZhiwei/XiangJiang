@@ -10,7 +10,7 @@ namespace XiangJiang.Common
         ///     计算文件的哈希值
         /// </summary>
         /// <param name="fs">被操作的源数据流</param>
-        /// <param name="algo">加密算法</param>
+        /// <param name="algo">HashAlgorithmName</param>
         /// <returns>哈希值16进制字符串</returns>
         private static string HashFile(Stream fs, HashAlgorithmName algo)
         {
