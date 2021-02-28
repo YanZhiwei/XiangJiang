@@ -36,10 +36,12 @@ namespace XiangJiang.Common
 
         public static void SaveFile(this MemoryStream ms, string destFile)
         {
-            using var fs = new FileStream(destFile, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-            var buffer = ms.ToArray();
-            fs.Write(buffer, 0, buffer.Length);
-            fs.Flush();
+            using (var fs = new FileStream(destFile, FileMode.OpenOrCreate, FileAccess.ReadWrite))
+            {
+                var buffer = ms.ToArray();
+                fs.Write(buffer, 0, buffer.Length);
+                fs.Flush();
+            }
         }
 
         public static string GetFileMd5(this FileStream fs)
